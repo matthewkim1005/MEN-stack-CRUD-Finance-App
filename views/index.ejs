@@ -10,6 +10,10 @@
   <% if (user) { %>
     <h1>Matt's Finance App</h1>
     <h2>Hello,  <%= user.username %>!</h2>
+      <p><b>What would you like to do today?</b></p>
+      <a href="/users/<%= user._id %>/transactions/index">See your transactions</a>
+      <a href="/users/<%= user._id %>/transactions/new">Add a new transaction</a>
+      <a href="/users/<%= user._id %>/transactions/calendar">Calendar</a>
   <% } else { %>
     <h1>Matt's Finance App</h1>
   <% } %>
