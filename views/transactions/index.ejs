@@ -10,9 +10,8 @@
     <h1>Your Transactions</h1>
     <ul>
         <% transactions.forEach((transaction)=> { %>
-            <li>
-                <%= transaction.transactionID %>
-                <a href="/transactions/<%= transaction.transactionID %>">View more details</a>
+            <li>Transaction: <%= transaction.transactionID %>
+                <a href="/transactions/<%= transaction.transactionID %>">View</a>
             </li>
             <% }) %>
     </ul>

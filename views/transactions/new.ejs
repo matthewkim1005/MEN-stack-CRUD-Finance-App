@@ -8,7 +8,7 @@
   <body>
     <%- include('../partials/_navbar.ejs') %>
     <h1>Add a new Transaction</h1>
-    <form action="/listings" method="POST">
+    <form action="/users/<%= user._id%>/transactions" method="POST">
         <label for="transaction-id">Transaction ID:</label>
         <input type="number" name="transactionID" id="transaction-id" />
 
@@ -26,9 +26,6 @@
 
         <label for="transaction-type">Withdrawal or Deposit:</label>
         <input type="text" name="transactionType" id="transaction-type"/>
-
-        <label for="starred">Starred:</label>
-        <input type="String" name="starred" id="starred"/>
 
         <button type="submit">Add Transaction</button>
     </form>
