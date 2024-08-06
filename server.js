@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 const methodOverride = require('method-override');
 const morgan = require('morgan');
 const session = require('express-session');
+const path = require("path");
 
 const authController = require('./controllers/auth.js');
 const transactionsController = require('./controllers/transactions.js');
@@ -23,6 +24,14 @@ mongoose.connection.on('connected', () => {
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
 // app.use(morgan('dev'));
+
+app.use(express.static(path.join(__dirname, "public")));
+
+// new code above this line
+app.get("/", async (req, res) => {
+  res.render("index.ejs");
+});
+
 app.use(
   session({
     secret: process.env.SESSION_SECRET,

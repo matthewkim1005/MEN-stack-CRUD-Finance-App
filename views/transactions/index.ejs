@@ -3,17 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/stylesheets/style.css" />
   <title>Your Transactions</title>
 </head>
   <body>
     <%- include('../partials/_navbar.ejs') %>
     <h1>Your Transactions</h1>
     <ul>
+      <% i = 1 %>
+      <% let USDollar = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', }); %>
         <% transactions.forEach((transaction)=> { %>
-            <li>Transaction: <%= transaction.transactionID %>
-                <a href="/transactions/<%= transaction.transactionID %>">View</a>
+          <% if (i < 10) { %>
+            <li><u><%= transaction.date.toDateString() %></u> - Transaction 00<%= i++ %>: <%= USDollar.format(transaction.price) %>
+                  <a href="/transactions/<%= transaction._id %>">View</a>
             </li>
-            <% }) %>
+            <% } else if (i > 9 && i < 100) { %>
+              <li><u><%= transaction.date.toDateString() %></u> - Transaction 0<%= i++ %>: <%= USDollar.format(transaction.price) %>
+                <a href="/transactions/<%= transaction._id %>">View</a>
+            </li>
+                <% } else { %>
+                  <li><u><%= transaction.date.toDateString() %></u> - Transaction <%= i++ %>: <%= USDollar.format(transaction.price) %>
+                    <a href="/transactions/<%= transaction._id %>">View</a>
+                </li>
+                  <% } %>
+          <% }) %>
     </ul>
   </body>
 </html>

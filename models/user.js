@@ -1,10 +1,6 @@
 const mongoose = require('mongoose');
 
 const transactionSchema = new mongoose.Schema({
-  transactionID: {
-    type: Number,
-    required: true
-  },
   price: {
     type: Number,
     required: true

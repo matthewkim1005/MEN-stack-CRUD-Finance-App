@@ -3,15 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/stylesheets/style.css" />
   <title>Add a new transaction</title>
 </head>
   <body>
     <%- include('../partials/_navbar.ejs') %>
     <h1>Add a new Transaction</h1>
     <form action="/users/<%= user._id%>/transactions" method="POST">
-        <label for="transaction-id">Transaction ID:</label>
-        <input type="number" name="transactionID" id="transaction-id" />
-
         <label for="price">Price:</label>
         <input type="number" name="price" id="price" min="0"/>
 

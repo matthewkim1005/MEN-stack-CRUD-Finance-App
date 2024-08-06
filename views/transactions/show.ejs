@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title>Transactions</title>
+</head>
+<body>
+    <%- include('../partials/_navbar.ejs') %>
+        <h1>
+            <%= transaction.price %>
+        </h1>
+        <a href="/users/<%= user._id %>/transactions/<%= transaction._id %>/edit">
+            Edit this transaction
+        </a>
+        <form action="/users/<%= user._id %>/transactions/<%= transaction._id %>?_method=DELETE" method="POST">
+            <button type="submit">Delete this transaction</button>
+        </form>
+</body>
+
+</html>

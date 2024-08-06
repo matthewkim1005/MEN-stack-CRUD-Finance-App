@@ -3,19 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/stylesheets/style.css" />
   <title>Home Page</title>
 </head>
 <body>
-  <%- include('./partials/_navbar.ejs') %>
-  <% if (user) { %>
-    <h1>Matt's Finance App</h1>
-    <h2>Hello,  <%= user.username %>!</h2>
-      <p><b>What would you like to do today?</b></p>
-      <a href="/users/<%= user._id %>/transactions/index">See your transactions</a>
-      <a href="/users/<%= user._id %>/transactions/new">Add a new transaction</a>
-      <a href="/users/<%= user._id %>/transactions/calendar">Calendar</a>
-  <% } else { %>
-    <h1>Matt's Finance App</h1>
-  <% } %>
+     <% if (user) { %> <!--change -->
+      <%- include('./partials/_navbar.ejs') %>
+      <h1>Matt's Finance App</h1>
+      <h2>Hello,  <%= user.username %>!</h2>
+        <p><b>What would you like to do today?</b></p>
+        <a href="/users/<%= user._id %>/transactions/index">See your transactions</a>
+        <a href="/users/<%= user._id %>/transactions/new">Add a new transaction</a>
+        <a href="/users/<%= user._id %>/transactions/calendar">Calendar</a>
+    <% } else { %>
+      <h1>Matt's Finance App</h1>
+    <% } %>
 </body>
 </html>

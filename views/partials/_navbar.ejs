@@ -1,5 +1,7 @@
 <nav>
+    <!-- change -->
     <% if(user) { %>
+        <a href="/users/<%= user._id %>/transactions/index">Your Transactions</a>
         <a href="/auth/sign-out">Sign Out</a>
         <% } else { %>
             <a href="/auth/sign-in">Sign In</a>
