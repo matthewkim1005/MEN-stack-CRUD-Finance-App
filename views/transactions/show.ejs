@@ -13,7 +13,8 @@
             <p><%= transaction.date.toDateString() %></p>
             <p>Price: <%= USDollar.format(transaction.price) %></p>
             <p>Store: <%= transaction.store %></p>
-        <a href="/users/<%= user._id %>/transactions/<%= transaction._id %>/edit">
+            <p>Type: <%= transaction.transactionType %></p>
+        <a href="/users/<%= user._id %>/transactions/<%= transaction._id %>/edit" class="edit">
             Edit this transaction
         </a>
         <form action="/users/<%= user._id %>/transactions/<%= transaction._id %>?_method=DELETE" method="POST">

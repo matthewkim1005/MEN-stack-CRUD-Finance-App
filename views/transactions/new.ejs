@@ -23,9 +23,12 @@
         <input type="date" name="date" id="date"/>
 
         <label for="transaction-type">Withdrawal or Deposit:</label>
-        <input type="text" name="transactionType" id="transaction-type"/>
+            <select id="transaction-type" name="transactionType">
+              <option value="interested">Withdrawal</option>
+              <option value="applied">Deposit</option>
+            </select>
 
-        <button type="submit">Add Transaction</button>
+        <button type="submit" class="margin">Add Transaction</button>
     </form>
   </body>
 </html>

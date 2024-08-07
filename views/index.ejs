@@ -7,8 +7,8 @@
   <title>Home Page</title>
 </head>
 <body>
-  <%- include('./partials/_navbar.ejs') %>
      <% if (user) { %>
+      <%- include('./partials/_navbar.ejs') %>
       <h1>Matt's Finance App</h1>
       <h2>Hello,  <%= user.username %>!</h2>
         <p><b>What would you like to do today?</b></p>
@@ -17,6 +17,8 @@
         <a href="/users/<%= user._id %>/transactions/calendar">Calendar</a>
     <% } else { %>
       <h1>Matt's Finance App</h1>
+        <a href="/auth/sign-in">Sign In</a>
+        <a href="/auth/sign-up">Sign Up</a>
     <% } %>
 </body>
 </html>
