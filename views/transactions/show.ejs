@@ -8,9 +8,11 @@
 </head>
 <body>
     <%- include('../partials/_navbar.ejs') %>
-        <h1>
-            <%= transaction.price %>
-        </h1>
+    <% let USDollar = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', }); %>
+        <h1>Item: <%= transaction.itemName %></h1>
+            <p><%= transaction.date.toDateString() %></p>
+            <p>Price: <%= USDollar.format(transaction.price) %></p>
+            <p>Store: <%= transaction.store %></p>
         <a href="/users/<%= user._id %>/transactions/<%= transaction._id %>/edit">
             Edit this transaction
         </a>

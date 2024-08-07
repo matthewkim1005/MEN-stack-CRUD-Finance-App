@@ -27,11 +27,6 @@ app.use(methodOverride('_method'));
 
 app.use(express.static(path.join(__dirname, "public")));
 
-// new code above this line
-app.get("/", async (req, res) => {
-  res.render("index.ejs");
-});
-
 app.use(
   session({
     secret: process.env.SESSION_SECRET,
@@ -50,7 +45,7 @@ app.get('/', (req, res) => {
 
 app.use('/auth', authController);
 app.use(isSignedIn);
-app.use('/users/:userId/transactions',transactionsController);
+app.use('/users/:userId/transactions', transactionsController);
 
 app.listen(port, () => {
   console.log(`The express app is ready on port ${port}!`);

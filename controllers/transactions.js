@@ -47,7 +47,7 @@ router.post('/', async (req, res) => {
 router.get('/:transactionId', async (req, res) => {
     try {
         const currentUser = await User.findById(req.session.user._id);
-        const transaction = currentUser.transaction.id(req.params.transactionId);
+        const transaction = currentUser.transactions.id(req.params.transactionId);
         res.render('transactions/show.ejs', { transaction : transaction });
     } catch (error) {
         console.log(error);

@@ -11,7 +11,7 @@ body {
 }
 
 h1 {
-    color: #769642;
+    color:blueviolet;
     font-size: 3.6em;
 }
 
@@ -31,10 +31,10 @@ form {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    background-color: #ffbd59;
+    background-color:paleturquoise;
     padding: 20px 30px;
     border-radius: 20px;
-    box-shadow: 5px 6px #f47b5b;
+    box-shadow: 5px 6px midnightblue;
     margin: 20px 10px;
 }
 
@@ -49,7 +49,7 @@ label, input {
 button {
     align-self: center;
     margin: 10px 4px 4px 4px;
-    background-color: #3f6a51;
+    background-color:rebeccapurple;
     color: white;
     padding: 5px 10px;
     border-radius: 15px;
@@ -58,9 +58,9 @@ button {
 }
 
 button:hover {
-    background-color: #769642;
+    background-color:darkblue;
 }
 
 button:active {
-    background-color: #2d4d3a;
+    background-color:blue;
 }

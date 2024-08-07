@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title>Editing transaction</title>
+</head>
+<body>
+    <form action="/users/<%= user._id %>/transactions/<%= transaction._id %>?_method=PUT" method="POST">
+        <label for="price">Price:</label>
+        <input type="number" name="price" id="price" value="<%= transaction.price %>" min="0" />
+
+        <label for="itemName">Item Name:</label>
+        <input type="text" name="itemName" id="item-name" value="<%= transaction.itemName %>" />
+
+        <label for="store">Store:</label>
+        <input type="text" name="store" id="store" value="<%= transaction.store %>" />
+
+        <label for="date">Date:</label>
+        <input type="date" name="date" id="date" value="<%= transaction.date.toISOString().substring(0, 10) %>" />
+
+        <label for="transactionType">Transaction Type:</label>
+        <input type="text" name="transactionType" id="transaction-type" value="<%= transaction.transactionType %>" />
+
+        <button type="submit">Edit Transaction</button>
+    </form>
+</body>
+</html>
+
